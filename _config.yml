@@ -1,0 +1,7 @@
+name: "ProLabPrints.com Status"
+#baseurl: 
+# url: 
+permalink: pretty
+# exclude: 
+highlighter: rouge
+markdown: kramdown

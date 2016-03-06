@@ -1,0 +1,50 @@
+---
+layout: default
+title: ProLabPrints.com Status Page
+description: Current status of our ROES service, Simple Uploader and main prolabprints.com website.
+active: yes
+---
+	<div class="container">
+	
+		<div id="server-container"></div>
+
+	</div>
+
+{% raw %}
+<script type="template/mustache" id="server-template">
+		<div class="well {{alert}}">
+			<div class="row-container">
+				<div class="column-33">
+					<h2>
+						{{friendlyname}}
+					</h2>
+					<span class="label label-{{label}}"> {{statusicon}} </span>
+					<p class="pad-top">Recent Outages:</p>
+					<div class="log{{id}}">
+						<ul class="list-unstyled">
+							{{#log}}
+								<li>
+									<span class="label label-{{labeltype}}"><i class="icon-{{typeicon}} icon-white"></i></span>
+									&nbsp;{{thedatetime}} PT
+								</li>
+							{{/log}}
+						</ul>
+					</div>
+				</div>
+				<div class="column-66">
+					{{#charts}}
+						<div class="donut">
+
+							<canvas width="90" height="90" uptime="{{uptime}}"></canvas>
+							<div class="uptime">
+								{{uptime}}% <br>{{title}}
+							</div>
+						</div>
+					{{/charts}}
+				</div>
+			</div>
+		</div>
+	</script>
+{% endraw %}
+
+

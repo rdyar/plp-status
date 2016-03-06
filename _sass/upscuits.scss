@@ -1,0 +1,32 @@
+.donut {
+    display: inline-block;
+       width: 110px;
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+.label-info{
+    background-color: #F89406;
+}
+.label-danger {
+    background-color: #d9534f;
+}
+.label-success {
+    background-color: #5cb85c;
+}
+
+.donut .uptime {
+    position: absolute;
+    width: 90px;
+    text-align: center;
+}
+
