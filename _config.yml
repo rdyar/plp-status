@@ -1,5 +1,5 @@
 name: "ProLabPrints.com Status"
-#baseurl: 
+baseurl: /plp-status 
 # url: 
 permalink: pretty
 # exclude: 
