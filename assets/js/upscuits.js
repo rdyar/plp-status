@@ -44,18 +44,18 @@ myApp.dashboard = (function($) {
 		// $_lastUpdate = $('#last-update');
 	
 		//translation
-		if (__language === false) {
-			$('.navbar-nav-language').remove();
-		} else {
-			$.i18n.init({
-				lng: __language,
-				fallbackLng: false,
-				detectLngQS: 'lang',
-				resGetPath: '/assets/js/locales/__lng__-__ns__.json' 
-			}, function(t) {
-				$('[data-i18n]').i18n();
-			});
-		}
+		// if (__language === false) {
+		// 	$('.navbar-nav-language').remove();
+		// } else {
+		// 	$.i18n.init({
+		// 		lng: __language,
+		// 		fallbackLng: false,
+		// 		detectLngQS: 'lang',
+		// 		resGetPath: '/assets/js/locales/__lng__-__ns__.json' 
+		// 	}, function(t) {
+		// 		$('[data-i18n]').i18n();
+		// 	});
+		// }
 
 		if (typeof(__apiKeys) == "undefined" || __apiKeys.length < 1) {
 			var $output = $(Mustache.render($('#no-monitors-template').html()));
@@ -133,6 +133,8 @@ myApp.dashboard = (function($) {
 				break;
 		}
 		//ony show last month of logs
+		//something is wrong with this logic - if a monitor has not been down for more than 1 month it will show the last time
+		//regardless of if it was within 1 month.
 		var lastMonth = Date.parse('-1month');
 		for (var i in data.log) {
 			var log = data.log[i],
@@ -149,7 +151,7 @@ myApp.dashboard = (function($) {
 		// interface of log-stuf like icons
 		data.typeicon = getLogIcon;
 		data.labeltype = getLogType;
-		
+			
 		// gather data for the graphs
 		var uptimes = data.customuptimeratio.split("-");
 		uptimes.push(data.alltimeuptimeratio);
@@ -172,9 +174,9 @@ myApp.dashboard = (function($) {
 		placeCharts($output);
 
 		//translate
-		if (__language !== false) {
-			$output.find('[data-i18n]').i18n();
-		}
+		// if (__language !== false) {
+		// 	$output.find('[data-i18n]').i18n();
+		// }
 
 		//attach popover listners
 		// $output.find('a.log').click(function() {
@@ -252,6 +254,8 @@ myApp.dashboard = (function($) {
 	// }
 
 	/* set the icon in front of every log-line */
+
+
 	function getLogIcon() {
 		switch (parseInt(this.type, 10)) {
 			case 1:

@@ -5,7 +5,9 @@ description: Current status of our ROES service, Simple Uploader and main prolab
 active: yes
 ---
 	<div class="container">
-			<div id="server-container"></div>
+	
+		<div id="server-container"></div>
+
 	</div>
 
 {% raw %}
@@ -23,7 +25,7 @@ active: yes
 							{{#log}}
 								<li>
 									<span class="label label-{{labeltype}}"><i class="icon-{{typeicon}} icon-white"></i></span>
-									&nbsp;{{thedatetime}} PT
+									&nbsp;{{datetime}} PT  {{lastmonth}}
 								</li>
 							{{/log}}
 						</ul>
@@ -45,4 +47,11 @@ active: yes
 	</script>
 {% endraw %}
 
-
+<h3>ROES Uploads Work Around</h3>
+<p>If our ROES Uploads server is Down, most likely the Simple Uploader will still be running with status: Normal.</p>
+<p>If this is the case and you don't want to wait for the ROES Uploads to return to Normal status, you can still send your ROES order
+by using the Simple Uploader to send the .ro file to us.</p>
+<p>To do this all you do is save the ROES order to your desktop - normally this is set to "Send now via the internet", but you can change to "Save to disk for alternate delivery". This step is found as you are checking out, it is after the shipping and payment screens.</p>
+<p>Once you have saved your ROES order to your computer somewhere you can just send that file (ends in .ro) to us via our <a href="http://prolabprints.com/order-online/simple-file-uploader/">Simple Uploader</a> and we will get your full order with everything you did in ROES.</p>
+<p>If your order is already in the Order History and trying to upload but failing, cancel it, then reopen it and go thru the checkout process again.</p>
+<p>See our <a href="http://prolabprints.com/support/">Support Page</a> for more info - click on "ROES - Your Order Failed to Send".</p>
