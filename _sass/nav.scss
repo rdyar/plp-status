@@ -20,6 +20,8 @@
     border-top: 1px solid #dedede;
     border-bottom: 1px solid #dedede;
     background-color: white;
+    -webkit-transform: translateZ(0); /*fixes flicker when using jquery*/
+    
 }
 .nav-container{
     display: -webkit-box;
